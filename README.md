@@ -57,3 +57,7 @@ Contributors
 
 * Mark Galloway
 * Abram Hindle
+* Yi Zhang
+
+Some code is copied and modified form class example.
+Example link: https://github.com/abramhindle/WebSocketsExamples
