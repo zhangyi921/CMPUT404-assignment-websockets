@@ -96,7 +96,7 @@ function drawNextFrame() {
 // This optionally draws the frame, call this if you're not sure if you should update
 // the canvas
 function drawFrame() {
-    if (drawNext) {
+    if (true) {
         renderFrame();
         drawNext = false;
     }
@@ -125,6 +125,9 @@ function addEntity(entity, data) {
     world[entity] = data;
     drawNextFrame(); // (but should we?)
     //XXX: Send a XHTML Request that updates the entity you just modified!
+    temp = {};
+    temp[entity] = data;
+    socket.send(JSON.stringify(temp));
 }
 var counter = 0;
 function addEntityWithoutName(data) {
@@ -260,6 +263,12 @@ function wsSetup() {
     };
     socket.onmessage = function(msg) {  
         try {
+            console.log("received: ");
+            console.log(msg.data);
+            var message = JSON.parse(msg.data);
+            for (var key in message){
+                world[key] = message[key];
+            }
             debug("WebSocket Recv:" + msg.data);
             //XXX: TODO What are you going to do here?            
         } catch (e) {

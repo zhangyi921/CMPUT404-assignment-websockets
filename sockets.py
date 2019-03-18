@@ -96,7 +96,7 @@ def hello():
 
 def read_ws(ws,client):
     '''A greenlet function that reads from the websocket and updates the world'''
-    # from chat.py================================
+    # modifies from chat.py================================
     try:
         while True:
             msg = ws.receive()
