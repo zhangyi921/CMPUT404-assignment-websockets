@@ -59,5 +59,6 @@ Contributors
 * Abram Hindle
 * Yi Zhang
 
-Some code is copied and modified form class example.
+Some code is copied and modified form an example from eclass.
+
 Example link: https://github.com/abramhindle/WebSocketsExamples
